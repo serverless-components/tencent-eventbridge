@@ -1,4 +1,4 @@
-# 腾讯云 API 网关组件
+# 腾讯云 Event Bridge 组件
 
 ## 简介
 
@@ -76,7 +76,7 @@ $ serverless info
 
 ### 5. 移除
 
-通过以下命令移除部署的 API 网关
+通过以下命令移除部署的 Event Bridge
 
 ```bash
 $ sls remove
