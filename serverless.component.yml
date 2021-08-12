@@ -1,0 +1,86 @@
+name: eventbridge
+version: 0.0.1
+author: 'Tencent Cloud, Inc'
+org: 'Tencent Cloud, Inc'
+description: Easily provision Tencent Event Bridge.
+keywords: 'tencent, serverless, eventbridge'
+repo: 'https://github.com/serverless-components/tencent-eventbridge'
+readme: 'https://github.com/serverless-components/tencent-eventbridge/tree/master/README.md'
+license: MIT
+main: ./src
+webDeployable: false
+
+actions:
+  deploy:
+    definition: Easily provision Tencent Event Bridge
+    inputs:
+      eventBusId:
+        type: string
+        regex: '^eb-(\w){8,}$'
+      eventBusName:
+        type: string
+        description: Name of Event Bus
+        default: serverless-eb
+        regex: '^[a-zA-Z][a-zA-Z0-9(_)]{0,48}[a-zA-Z0-9]?$'
+      type:
+        type: string
+        default: Cloud
+      region:
+        type: string
+        default: ap-guangzhou
+        description: Region for Event Bridge
+      # uin:
+      #   type: string
+      connections:
+        type: array
+        items:
+          - type: object
+            keys:
+              connectionId:
+                type: string
+              connectionName:
+                type: string
+              serviceId:
+                type: string
+              enable:
+                type: boolean
+              method:
+                type: string
+                allow:
+                  - ANY
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - HEAD
+      rules:
+        type: array
+        items:
+          - type: object
+            keys:
+              ruleId:
+                type: string
+              ruleName:
+                type: string
+              eventPattern:
+                type: string
+              type:
+                type: string
+              description:
+                type: string
+              enable:
+                type: boolean
+              targets:
+                type: array
+                items:
+                  - type: object
+                    keys:
+                      functionName:
+                        type: string
+                      functionNamespace:
+                        type: string
+                        default: default
+                      functionVersion:
+                        type: string
+  remove:
+    definition: Remove your Event Bridge

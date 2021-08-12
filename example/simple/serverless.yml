@@ -1,0 +1,16 @@
+app: appDemo
+stage: dev
+component: eventbridge
+name: ebDemo
+
+inputs:
+  eventBusName: 'sls_eb_test'
+  region: ap-guangzhou
+  type: Cloud
+  uin: '123456789'
+  rules:
+    - ruleName: 'sls_eb_rule01'
+      targets:
+        - functionName: 'sls_eb_rule_target'
+          functionNamespace: default
+          functionVersion: '$DEFAULT'
