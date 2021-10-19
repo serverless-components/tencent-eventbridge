@@ -2,7 +2,7 @@ name: eventbridge
 version: 0.0.1
 author: 'Tencent Cloud, Inc'
 org: 'Tencent Cloud, Inc'
-description: Easily provision Tencent Event Bridge.
+description: EventBridge 组件，允许用户创建部署事件总线(EventBridge)实例。配合其他组件进行安全，稳定，高效的无服务器事件管理。
 keywords: 'tencent, serverless, eventbridge'
 repo: 'https://github.com/serverless-components/tencent-eventbridge'
 readme: 'https://github.com/serverless-components/tencent-eventbridge/tree/master/README.md'
